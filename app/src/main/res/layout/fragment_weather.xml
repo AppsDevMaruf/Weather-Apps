@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".WeatherFragment">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Jan 17, 2022"
+            android:id="@+id/currentDateTV"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Dhaka, BD"
+            android:textSize="18sp"
+            android:layout_below="@id/currentDateTV"
+            android:id="@+id/currentAddressTV"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="29\u00B0"
+            android:textSize="60sp"
+            android:layout_below="@id/currentAddressTV"
+            android:id="@+id/currentTempTV"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="feels like 20\u00B0"
+            android:textSize="18sp"
+            android:layout_below="@id/currentTempTV"
+            android:id="@+id/currentFeelsLikeTV"/>
+
+        <TextView
+            android:id="@+id/currentMaxMinTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/currentFeelsLikeTV"
+            tools:text="Max: 27\u00B0 Min: 27\u00B0" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tempUnitSwitch"
+            android:textOff="C"
+            android:textOn="F"
+            app:showText="true"
+            android:layout_alignParentEnd="true"/>
+
+        <ImageView
+            android:id="@+id/currentIconIV"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/tempUnitSwitch"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_baseline_cloud_24" />
+
+        <TextView
+            android:id="@+id/currentConditionTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/currentIconIV"
+            android:layout_alignParentEnd="true"
+            tools:text="Sunny, Clear Sky" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Humidity 48%"
+            android:layout_below="@id/currentConditionTV"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/currentHumidityTV"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Pressure 1018 hPa"
+            android:layout_below="@id/currentHumidityTV"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/currentPressureTV"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/forecastRV"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</layout>
